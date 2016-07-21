@@ -33,6 +33,8 @@ module.exports = obj => new Promise((resolve, reject) => {
   req.end();
 });
 
+module.exports.string = string => module.exports({ text: string });
+
 module.exports.conf = {
   uri: process.env.SLACK_WEBHOOK_URI,
 };

@@ -28,6 +28,14 @@ Put your Slack webhook URI into the `SLACK_WEBHOOK_URI` environment variable.
 const slackr = require('slackr');
 ```
 
+### Simple
+
+```js
+slackr.string('This is my message').then(response => {
+  console.log(response.code, response.body);
+});
+```
+
 ### Advanced
 
 ```js

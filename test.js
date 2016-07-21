@@ -70,4 +70,15 @@ describe('slackr', () => {
       })).catch(done);
     });
   });
+
+  describe('string()', () => {
+    it('posts simple text message', done => {
+      const str = 'slackr.string(): posts simple text message';
+
+      slackr.string(str).then(res => process.nextTick(() => {
+        assert.deepEqual(res, { code: 200, body: 'ok' });
+        done();
+      })).catch(done);
+    });
+  });
 });
